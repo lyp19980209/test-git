@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- 通过这个配置文件完成mybatis与数据库的连接 -->
+<configuration>
+	<!-- 引入 database.properties 文件-->
+	<!--<properties resource="database.properties"/>-->
+	<!--<properties resource="database.properties">
+		<property name="driver" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/smbms"/>
+		<property name="user" value="root"/>
+		<property name="password" value="root"/>
+	</properties>-->
+
+	<!-- 配置mybatis的log实现为LOG4J -->
+	<settings>
+<!--		<setting name="logImpl" value="LOG4J" />-->
+	<!--	<setting name="logImpl" value="STDOUT_LOGGING" />-->
+		<!--除了resultMap中声明的字段，其他都不匹配-->
+<!--		<setting name="autoMappingBehavior" value="NONE"/>-->
+		<setting name="autoMappingBehavior" value="FULL"/>
+
+		<!--开启二级缓存 默认true-->
+		<setting name="cacheEnabled" value="true"/>
+	</settings>
+	<!--起別名-->
+	<typeAliases>
+<!--		<typeAlias type="cn.smbms.entity.User" alias="user"/>-->
+		<!--批量扫描包，生成别名，类名，不区分大小写-->
+		<package name="cn.smbms.pojo"/>
+	</typeAliases>
+
+	
+	<!-- 将mapper文件加入到配置文件中 -->
+
+
+
+
+</configuration>
